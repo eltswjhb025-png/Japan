@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'flashcards/HiraganaFlashcards.dart';
-import 'flashcards/KanjiFlashcards.dart';
-import 'flashcards/KatakanaFlashcards.dart';
+import 'flashcards/hiragana_flashcards.dart';
+import 'flashcards/kanji_flashcards.dart';
+import 'flashcards/katakana_flashcards.dart';
 
 class FlashcardsScreen extends StatelessWidget {
   const FlashcardsScreen({super.key});

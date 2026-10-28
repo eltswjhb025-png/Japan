@@ -1,13 +1,12 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class ReminderScreen extends StatelessWidget{
-  const ReminderScreen({super.key});
+class FeelingSickScreen extends StatelessWidget{
+  const FeelingSickScreen({super.key});
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      //TODO:
+      //TODO:IMPLEMENT BUILD
     );
   }
 }

@@ -1,13 +1,12 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class HelpScreen extends StatelessWidget{
-  const HelpScreen({super.key});
+class AccommodationScreen extends StatelessWidget{
+  const AccommodationScreen({super.key});
 
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      //TODO:
+      //TODO:IMPLEMENT BUILD
     );
   }
 }

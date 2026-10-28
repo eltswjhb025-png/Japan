@@ -61,13 +61,13 @@ class JapanApp extends StatelessWidget {
                 // Background overlay
                 Container(
                   color: isDark
-                      ? Colors.black.withOpacity(0.40)
-                      : Colors.white.withOpacity(0.10),
+                      ? Colors.black.withValues(alpha: 0.40)
+                      : Colors.white.withValues(alpha: 0.10),
                 ),
 
                 // Teal aesthetic overlay
                 Container(
-                  color: Colors.teal.withOpacity(0.12),
+                  color: Colors.teal.withValues(alpha: 0.12),
                 ),
 
                 // App screens appear above the background

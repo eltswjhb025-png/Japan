@@ -1,66 +1,66 @@
-
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class KatakanaScreen extends StatelessWidget {
-  const KatakanaScreen({super.key});
+class HiraganaScreen extends StatelessWidget {
+  const HiraganaScreen({super.key});
 
-  // Basic Katakana characters and their romanized pronunciations
-  final List<Map<String, String>> katakana = const [
-    {'char': 'ア', 'romaji': 'a'},
-    {'char': 'イ', 'romaji': 'i'},
-    {'char': 'ウ', 'romaji': 'u'},
-    {'char': 'エ', 'romaji': 'e'},
-    {'char': 'オ', 'romaji': 'o'},
+  // Hiragana characters and their romanized pronunciations
+  final List<Map<String, String>> hiragana = const [
+    {'char': 'あ', 'romaji': 'a'},
+    {'char': 'い', 'romaji': 'i'},
+    {'char': 'う', 'romaji': 'u'},
+    {'char': 'え', 'romaji': 'e'},
+    {'char': 'お', 'romaji': 'o'},
 
-    {'char': 'カ', 'romaji': 'ka'},
-    {'char': 'キ', 'romaji': 'ki'},
-    {'char': 'ク', 'romaji': 'ku'},
-    {'char': 'ケ', 'romaji': 'ke'},
-    {'char': 'コ', 'romaji': 'ko'},
+    {'char': 'か', 'romaji': 'ka'},
+    {'char': 'き', 'romaji': 'ki'},
+    {'char': 'く', 'romaji': 'ku'},
+    {'char': 'け', 'romaji': 'ke'},
+    {'char': 'こ', 'romaji': 'ko'},
 
-    {'char': 'サ', 'romaji': 'sa'},
-    {'char': 'シ', 'romaji': 'shi'},
-    {'char': 'ス', 'romaji': 'su'},
-    {'char': 'セ', 'romaji': 'se'},
-    {'char': 'ソ', 'romaji': 'so'},
+    {'char': 'さ', 'romaji': 'sa'},
+    {'char': 'し', 'romaji': 'shi'},
+    {'char': 'す', 'romaji': 'su'},
+    {'char': 'せ', 'romaji': 'se'},
+    {'char': 'そ', 'romaji': 'so'},
 
-    {'char': 'タ', 'romaji': 'ta'},
-    {'char': 'チ', 'romaji': 'chi'},
-    {'char': 'ツ', 'romaji': 'tsu'},
-    {'char': 'テ', 'romaji': 'te'},
-    {'char': 'ト', 'romaji': 'to'},
+    {'char': 'た', 'romaji': 'ta'},
+    {'char': 'ち', 'romaji': 'chi'},
+    {'char': 'つ', 'romaji': 'tsu'},
+    {'char': 'て', 'romaji': 'te'},
+    {'char': 'と', 'romaji': 'to'},
 
-    {'char': 'ナ', 'romaji': 'na'},
-    {'char': 'ニ', 'romaji': 'ni'},
-    {'char': 'ヌ', 'romaji': 'nu'},
-    {'char': 'ネ', 'romaji': 'ne'},
-    {'char': 'ノ', 'romaji': 'no'},
+    {'char': 'な', 'romaji': 'na'},
+    {'char': 'に', 'romaji': 'ni'},
+    {'char': 'ぬ', 'romaji': 'nu'},
+    {'char': 'ね', 'romaji': 'ne'},
+    {'char': 'の', 'romaji': 'no'},
 
-    {'char': 'ハ', 'romaji': 'ha'},
-    {'char': 'ヒ', 'romaji': 'hi'},
-    {'char': 'フ', 'romaji': 'fu'},
-    {'char': 'ヘ', 'romaji': 'he'},
-    {'char': 'ホ', 'romaji': 'ho'},
+    {'char': 'は', 'romaji': 'ha'},
+    {'char': 'ひ', 'romaji': 'hi'},
+    {'char': 'ふ', 'romaji': 'fu'},
+    {'char': 'へ', 'romaji': 'he'},
+    {'char': 'ほ', 'romaji': 'ho'},
 
-    {'char': 'マ', 'romaji': 'ma'},
-    {'char': 'ミ', 'romaji': 'mi'},
-    {'char': 'ム', 'romaji': 'mu'},
-    {'char': 'メ', 'romaji': 'me'},
-    {'char': 'モ', 'romaji': 'mo'},
+    {'char': 'ま', 'romaji': 'ma'},
+    {'char': 'み', 'romaji': 'mi'},
+    {'char': 'む', 'romaji': 'mu'},
+    {'char': 'め', 'romaji': 'me'},
+    {'char': 'も', 'romaji': 'mo'},
 
-    {'char': 'ヤ', 'romaji': 'ya'},
-    {'char': 'ユ', 'romaji': 'yu'},
-    {'char': 'ヨ', 'romaji': 'yo'},
+    {'char': 'や', 'romaji': 'ya'},
+    {'char': 'ゆ', 'romaji': 'yu'},
+    {'char': 'よ', 'romaji': 'yo'},
 
-    {'char': 'ラ', 'romaji': 'ra'},
-    {'char': 'リ', 'romaji': 'ri'},
-    {'char': 'ル', 'romaji': 'ru'},
-    {'char': 'レ', 'romaji': 're'},
-    {'char': 'ロ', 'romaji': 'ro'},
+    {'char': 'ら', 'romaji': 'ra'},
+    {'char': 'り', 'romaji': 'ri'},
+    {'char': 'る', 'romaji': 'ru'},
+    {'char': 'れ', 'romaji': 're'},
+    {'char': 'ろ', 'romaji': 'ro'},
 
-    {'char': 'ワ', 'romaji': 'wa'},
-    {'char': 'ヲ', 'romaji': 'wo'},
-    {'char': 'ン', 'romaji': 'n'},
+    {'char': 'わ', 'romaji': 'wa'},
+    {'char': 'を', 'romaji': 'wo'},
+    {'char': 'ん', 'romaji': 'n'},
   ];
 
   @override
@@ -77,7 +77,7 @@ class KatakanaScreen extends StatelessWidget {
           color: Colors.white,
         ),
         title: const Text(
-          'K a t a k a n a',
+          'H i r a g a n a',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Arial',
@@ -103,12 +103,12 @@ class KatakanaScreen extends StatelessWidget {
           // Space between rows
           mainAxisSpacing: 8,
 
-          // Makes the buttons square
-          childAspectRatio: 1,
+          // Makes the buttons slightly taller than they are wide
+          childAspectRatio: 0.90,
 
-          // Create a button for every Katakana character
-          children: katakana.map((item) {
-            return _katakanaButton(
+          // Create a button for every Hiragana character
+          children: hiragana.map((item) {
+            return _hiraganaButton(
               item['char']!,
               item['romaji']!,
                   () {
@@ -125,8 +125,8 @@ class KatakanaScreen extends StatelessWidget {
     );
   }
 
-  // KATAKANA BUTTON
-  Widget _katakanaButton(
+  // HIRAGANA BUTTON
+  Widget _hiraganaButton(
       String character,
       String romaji,
       VoidCallback onTap,
@@ -140,19 +140,17 @@ class KatakanaScreen extends StatelessWidget {
           width: 1,
         ),
       ),
-
       child: Material(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(12),
         clipBehavior: Clip.antiAlias,
-
         child: InkWell(
           onTap: onTap,
-
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              // Japanese Katakana character
+              // Japanese character
               Text(
                 character,
                 style: const TextStyle(
@@ -162,7 +160,7 @@ class KatakanaScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 4),
+              const SizedBox(height: 2),
 
               // Romanized pronunciation
               Text(
@@ -195,7 +193,7 @@ class KatakanaScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
 
-          // Selected Katakana character
+          // Selected character
           title: Text(
             character,
             textAlign: TextAlign.center,

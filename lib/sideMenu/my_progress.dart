@@ -1,8 +1,8 @@
-import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
-class DictionaryScreen extends StatelessWidget{
-  const DictionaryScreen({super.key});
+class MyProgressScreen extends StatelessWidget{
+  const MyProgressScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

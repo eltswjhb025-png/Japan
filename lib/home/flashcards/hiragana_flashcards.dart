@@ -136,10 +136,10 @@ class _HiraganaFlashcardsScreenState
                       maxHeight: 380,
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.12),
+                      color: Colors.white.withValues(alpha: 0.12),
                       borderRadius: BorderRadius.circular(25),
                       border: Border.all(
-                        color: Colors.white.withOpacity(0.45),
+                        color: Colors.white.withValues(alpha: 0.45),
                         width: 1.5,
                       ),
                     ),
@@ -224,7 +224,7 @@ Widget _flashcardButton({
   required VoidCallback onTap,
 }) {
   return Material(
-    color: Colors.white.withOpacity(0.10),
+    color: Colors.white.withValues(alpha: 0.10),
     borderRadius: BorderRadius.circular(14),
     child: InkWell(
       onTap: onTap,
@@ -237,7 +237,7 @@ Widget _flashcardButton({
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(14),
           border: Border.all(
-            color: Colors.white.withOpacity(0.35),
+            color: Colors.white.withValues(alpha: 0.35),
           ),
         ),
         child: Row(

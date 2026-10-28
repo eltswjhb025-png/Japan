@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class KanjiScreen extends StatelessWidget {
@@ -95,8 +94,8 @@ class KanjiScreen extends StatelessWidget {
           // Space between rows
           mainAxisSpacing: 8,
 
-          // Makes the buttons square
-          childAspectRatio: 1,
+          // Makes the buttons slightly taller than they are wide
+          childAspectRatio: 0.90,
 
           // Create a button for every Kanji character
           children: kanji.map((item) {
@@ -133,17 +132,15 @@ class KanjiScreen extends StatelessWidget {
           width: 1,
         ),
       ),
-
       child: Material(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(12),
         clipBehavior: Clip.antiAlias,
-
         child: InkWell(
           onTap: onTap,
-
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               // Japanese Kanji character
               Text(
@@ -155,7 +152,7 @@ class KanjiScreen extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 4),
+              const SizedBox(height: 2),
 
               // Romanized reading
               Text(

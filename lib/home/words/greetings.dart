@@ -1,13 +1,12 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget{
-  const ProfileScreen({super.key});
+class GreetingsScreen extends StatelessWidget{
+  const GreetingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //TODO:
+      //TODO: IMPLEMENT BUILD
     );
   }
 }

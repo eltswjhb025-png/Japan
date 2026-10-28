@@ -2,19 +2,19 @@
 import 'package:flutter/material.dart';
 import 'package:learn_japanese/home/theme_controller.dart';
 
-import '../sideMenu/Help.dart';
-import '../sideMenu/MyProgress.dart';
+import '../sideMenu/help.dart';
+import '../sideMenu/my_progress.dart';
 import '../sideMenu/Profile.dart';
-import '../sideMenu/Dictionary.dart';
-import '../sideMenu/Reminder.dart';
+import '../sideMenu/dictionary.dart';
+import '../sideMenu/reminder.dart';
 import '../sideMenu/settings.dart';
 
-import 'Flashcards.dart';
-import 'Kanji.dart';
-import 'Katakana.dart';
-import 'Quiz.dart';
-import 'Words.dart';
-import 'Hiragana.dart';
+import 'flashcards.dart';
+import 'kanji.dart';
+import 'katakana.dart';
+import 'quiz.dart';
+import 'words.dart';
+import 'hiragana.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -228,21 +228,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
 
-                  // QUIZ
-                  _menuButton(
-                    'QUIZ',
-                        () {
-                      // Navigate to Quiz screen
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                          const QuizScreen(),
-                        ),
-                      );
-                    },
-                  ),
-
                   // WORDS
                   _menuButton(
                     'WORDS',
@@ -253,6 +238,21 @@ class _HomeScreenState extends State<HomeScreen> {
                         MaterialPageRoute(
                           builder: (context) =>
                           const WordsScreen(),
+                        ),
+                      );
+                    },
+                  ),
+
+                  // QUIZ
+                  _menuButton(
+                    'QUIZ',
+                        () {
+                      // Navigate to Quiz screen
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                          const QuizScreen(),
                         ),
                       );
                     },
@@ -427,7 +427,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             ),
 
-                            // DICTIONARY
+                            // DICTIONARY/VOCABULARY
                             _sideMenuItem(
                               Icons.book,
                               'Dictionary',
