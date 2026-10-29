@@ -202,7 +202,7 @@ class WordsScreen extends StatelessWidget{
                   _menuButton(
                     context,
                     'Dating',
-                    Icons.favorite,
+                    Icons.people,
                     const DatingScreen(),
                   ),
 

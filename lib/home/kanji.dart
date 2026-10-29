@@ -125,10 +125,10 @@ class KanjiScreen extends StatelessWidget {
       ) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.20),
+        color: Colors.white.withValues(alpha: 0.20),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.white.withOpacity(0.35),
+          color: Colors.white.withValues(alpha: 0.35),
           width: 1,
         ),
       ),
