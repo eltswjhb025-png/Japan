@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class CitiesScreen extends StatelessWidget{
+class CitiesScreen extends StatelessWidget {
   const CitiesScreen({super.key});
 
   final List<Map<String, String>> citiesInJapan = const [
@@ -62,27 +62,28 @@ class CitiesScreen extends StatelessWidget{
         ),
       ),
 
-      //BODY
+      // BODY
       body: ListView(
-        children: citiesInJapan.map((item){
+        padding: const EdgeInsets.all(12),
+        children: citiesInJapan.map((item) {
           return _citiesButton(
             item['city']!,
             item['japanese']!,
             item['romaji']!,
           );
-        }
-        ).toList(),
+        }).toList(),
       ),
     );
   }
 
-  //CITIES BUTTON
+  // CITIES BUTTON
   Widget _citiesButton(
       String city,
       String japanese,
       String romaji,
-      ){
+      ) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.30),
         borderRadius: BorderRadius.circular(12),
@@ -96,47 +97,57 @@ class CitiesScreen extends StatelessWidget{
         borderRadius: BorderRadius.circular(12),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // ENGLISH WORD
-              Text(
-                city,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12,
+              vertical: 16,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // ENGLISH CITY NAME
+                Text(
+                  city,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              //JAPANESE
-              Text(
-                japanese,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                // JAPANESE
+                Text(
+                  japanese,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              // Romanized reading
-              Text(
-                romaji,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
+                // ROMANIZED READING
+                Text(
+                  romaji,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+//

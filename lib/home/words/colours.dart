@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ColoursScreen extends StatelessWidget{
+class ColoursScreen extends StatelessWidget {
   const ColoursScreen({super.key});
 
   final List<Map<String, String>> colours = const [
@@ -36,7 +36,7 @@ class ColoursScreen extends StatelessWidget{
           color: Colors.white,
         ),
         title: const Text(
-          'C o l o u  r s',
+          'C o l o u r s',
           textAlign: TextAlign.center,
           style: TextStyle(
             fontFamily: 'Arial',
@@ -48,27 +48,28 @@ class ColoursScreen extends StatelessWidget{
         ),
       ),
 
-      //BODY
+      // BODY
       body: ListView(
-        children: colours.map((item){
+        padding: const EdgeInsets.all(12),
+        children: colours.map((item) {
           return _coloursButton(
             item['word']!,
             item['hiragana']!,
             item['romaji']!,
           );
-        }
-        ).toList(),
+        }).toList(),
       ),
     );
   }
 
-  //COLOURS BUTTON
+  // COLOURS BUTTON
   Widget _coloursButton(
       String word,
       String hiragana,
       String romaji,
-      ){
+      ) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.30),
         borderRadius: BorderRadius.circular(12),
@@ -82,47 +83,57 @@ class ColoursScreen extends StatelessWidget{
         borderRadius: BorderRadius.circular(12),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // ENGLISH WORD
-              Text(
-                word,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12,
+              vertical: 16,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // ENGLISH WORD
+                Text(
+                  word,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              //HIRAGANA
-              Text(
-                hiragana,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                // HIRAGANA
+                Text(
+                  hiragana,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              // Romanized reading
-              Text(
-                romaji,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
+                // ROMANIZED READING
+                Text(
+                  romaji,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+//

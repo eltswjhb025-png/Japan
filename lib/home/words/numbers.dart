@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NumbersScreen extends StatelessWidget{
+class NumbersScreen extends StatelessWidget {
   const NumbersScreen({super.key});
 
   final List<Map<String, String>> numbers = const [
@@ -22,7 +22,7 @@ class NumbersScreen extends StatelessWidget{
     {'word': 'Fourteen', 'hiragana': 'じゅうよん', 'romaji': 'Juuyon'},
     {'word': 'Fifteen', 'hiragana': 'じゅうご', 'romaji': 'Juugo'},
     {'word': 'Sixteen', 'hiragana': 'じゅうろく', 'romaji': 'Juuroku'},
-    {'word': 'Seventeen', 'hiragana': 'じゅうなな', 'romaji': 'Juunanа'},
+    {'word': 'Seventeen', 'hiragana': 'じゅうなな', 'romaji': 'Juunana'},
     {'word': 'Eighteen', 'hiragana': 'じゅうはち', 'romaji': 'Juuhachi'},
     {'word': 'Nineteen', 'hiragana': 'じゅうきゅう', 'romaji': 'Juukyuu'},
     {'word': 'Twenty', 'hiragana': 'にじゅう', 'romaji': 'Nijuu'},
@@ -54,7 +54,7 @@ class NumbersScreen extends StatelessWidget{
     {'word': 'Second', 'hiragana': 'にばんめ', 'romaji': 'Nibanme'},
     {'word': 'Third', 'hiragana': 'さんばんめ', 'romaji': 'Sanbanme'},
     {'word': 'Fourth', 'hiragana': 'よんばんめ', 'romaji': 'Yonbanme'},
-    {'word': 'Fifth', 'hiragana': 'ごばんめ', 'romaji': 'Gobannme'},
+    {'word': 'Fifth', 'hiragana': 'ごばんめ', 'romaji': 'Gobanme'},
     {'word': 'Sixth', 'hiragana': 'ろくばんめ', 'romaji': 'Rokubanme'},
     {'word': 'Seventh', 'hiragana': 'ななばんめ', 'romaji': 'Nanabanme'},
     {'word': 'Eighth', 'hiragana': 'はちばんめ', 'romaji': 'Hachibanme'},
@@ -72,9 +72,11 @@ class NumbersScreen extends StatelessWidget{
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
+
         iconTheme: const IconThemeData(
           color: Colors.white,
         ),
+
         title: const Text(
           'N u m b e r s',
           textAlign: TextAlign.center,
@@ -88,81 +90,101 @@ class NumbersScreen extends StatelessWidget{
         ),
       ),
 
-      //BODY
+      // BODY
       body: ListView(
-        children: numbers.map((item){
+        padding: const EdgeInsets.all(12),
+        children: numbers.map((item) {
           return _numberButton(
             item['word']!,
             item['hiragana']!,
             item['romaji']!,
           );
-        }
-        ).toList(),
+        }).toList(),
       ),
     );
   }
 
-  //NUMBER BUTTON
+  // NUMBER BUTTON
   Widget _numberButton(
       String word,
       String hiragana,
       String romaji,
-      ){
+      ) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.30),
+
         borderRadius: BorderRadius.circular(12),
+
         border: Border.all(
           color: Colors.white.withValues(alpha: 0.35),
           width: 1,
         ),
       ),
+
       child: Material(
         color: Colors.transparent,
+
         borderRadius: BorderRadius.circular(12),
+
         clipBehavior: Clip.antiAlias,
+
         child: InkWell(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // ENGLISH WORD
-              Text(
-                word,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12,
+              vertical: 16,
+            ),
+
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+
+              children: [
+                // ENGLISH WORD
+                Text(
+                  word,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              //HIRAGANA
-              Text(
-                hiragana,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                // HIRAGANA
+                Text(
+                  hiragana,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              // Romanized reading
-              Text(
-                romaji,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
+                // ROMANIZED READING
+                Text(
+                  romaji,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+//

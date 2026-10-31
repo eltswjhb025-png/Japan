@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class EmergencyScreen extends StatelessWidget{
+class EmergencyScreen extends StatelessWidget {
   const EmergencyScreen({super.key});
 
   final List<Map<String, String>> emergencyPhrases = const [
@@ -70,27 +70,28 @@ class EmergencyScreen extends StatelessWidget{
         ),
       ),
 
-      //BODY
+      // BODY
       body: ListView(
-        children: emergencyPhrases.map((item){
+        padding: const EdgeInsets.all(12),
+        children: emergencyPhrases.map((item) {
           return _emergencyButton(
             item['word']!,
             item['hiragana']!,
             item['romaji']!,
           );
-        }
-        ).toList(),
+        }).toList(),
       ),
     );
   }
 
-  //GENERAL BUTTON
+  // EMERGENCY BUTTON
   Widget _emergencyButton(
       String word,
       String hiragana,
       String romaji,
-      ){
+      ) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
         color: Colors.white.withValues(alpha: 0.30),
         borderRadius: BorderRadius.circular(12),
@@ -104,47 +105,57 @@ class EmergencyScreen extends StatelessWidget{
         borderRadius: BorderRadius.circular(12),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // ENGLISH WORD
-              Text(
-                word,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 12,
+              vertical: 16,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // ENGLISH WORD
+                Text(
+                  word,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              //HIRAGANA
-              Text(
-                hiragana,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                // HIRAGANA
+                Text(
+                  hiragana,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
 
-              const SizedBox(height: 3),
+                const SizedBox(height: 3),
 
-              // Romanized reading
-              Text(
-                romaji,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
+                // ROMANIZED READING
+                Text(
+                  romaji,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    color: Colors.white70,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
   }
 }
+//
